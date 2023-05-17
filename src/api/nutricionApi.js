@@ -1,4 +1,5 @@
 import axios from "axios";
+require('dotenv').config()
 // import { getEnvVariables } from "../helpers";
 
 // const {VITE_API_URL} = getEnvVariables()
