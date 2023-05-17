@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "start": "npm run dev",
-    "build": "CI=false vite build ",  
+    "start": "CI=false vite build",
+    "build": "CI=false vite build",  
     "preview": "vite preview"
   },
   "dependencies": {
