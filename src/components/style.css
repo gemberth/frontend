@@ -13,6 +13,6 @@
     opacity: 0.9;
   }
   .nav-item{
-    position: relative;
+    /* position: relative; */
     background: #2a2727; ;
   }
