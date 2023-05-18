@@ -4,7 +4,7 @@ import axios from "axios";
 // const {VITE_API_URL} = getEnvVariables()
 
 const nutricionApi = axios.create({
-    baseURL: process.env.VITE_API_URL
+    baseURL: "https://backend-production-ba2c.up.railway.app/api"
 });
 
 //CONFIGURAR INTERCEPTORES
