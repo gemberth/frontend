@@ -36,7 +36,7 @@ export const LoginPage = () => {
         <div className="contenedor">
             <div className="demo-content container login-container">
                 <div className="row mgAuto">
-                    <div className="login-form-11" style={{ magin: '0 auto' }}>
+                    <div className="login-form-1" style={{ magin: '0 auto' }}>
                         <h3>Ingreso</h3>
                         <form onSubmit={loginSubmit}>
                             <div className="form-group mb-2">
