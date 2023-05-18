@@ -1,11 +1,10 @@
 import axios from "axios";
-// require('dotenv').config()
-// import { getEnvVariables } from "../helpers";
+import { getEnvVariables } from "../helpers";
 
-// const {VITE_API_URL} = getEnvVariables()
+const {VITE_API_URL} = getEnvVariables()
 
 const nutricionApi = axios.create({
-    baseURL: process.env.VITE_API_URL
+    baseURL: VITE_API_URL
 });
 
 //CONFIGURAR INTERCEPTORES
