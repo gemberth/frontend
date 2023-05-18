@@ -2,7 +2,7 @@ import './LoginPage.css';
 import { useAuthStore, useForm } from "../../hooks";
 import { useEffect } from 'react';
 import swal from "sweetalert2";
-// import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const loginFormFields = {
     nombre: '',
@@ -16,7 +16,7 @@ const loginFormFields = {
 
 export const RegisterPage = () => {
 
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
     const { startLogin, startRegister, errorMsg } = useAuthStore();
 
     useEffect(() => {
