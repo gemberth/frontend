@@ -1,10 +1,11 @@
 import axios from "axios";
 import { getEnvVariables } from "../helpers";
 
-const {VITE_API_URL} = getEnvVariables()
+// const {VITE_API_URL} = getEnvVariables()
+
 
 const nutricionApi = axios.create({
-    baseURL: VITE_API_URL
+    baseURL: process.env.VITE_API_URL
 });
 
 //CONFIGURAR INTERCEPTORES
