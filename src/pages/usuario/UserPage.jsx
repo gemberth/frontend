@@ -32,6 +32,8 @@ export const UserPage = () => {
 
   const [usuarioSeleccionado, setusuarioSeleccionado] = useState({})
 
+  const [registros, setRegistros] = useState({});
+
 
   const [listaCaloriaSeleccionado, setlistaCaloriaSeleccionado] = useState([])
   const [estado, setestado] = useState()
@@ -71,10 +73,28 @@ export const UserPage = () => {
     traerTodosApi()
     
   }
-  
+  //let registros = {};
+
 
   const editarUsuario = (usuario) => {
     navigate('/usuario/' + usuario._id)
+  }
+  function formatearFecha(fecha) {
+    var opciones = { year: 'numeric', month: 'long', day: 'numeric' };
+    var fechaFormateada = new Date(fecha).toLocaleDateString('es-ES', opciones);
+    return fechaFormateada;
+  }
+
+  function sumarCalorias(fecha, calorias) {
+    var fechaFormateada = new Date(fecha).toLocaleDateString();
+    
+    if (setRegistros[fechaFormateada]) {
+      setRegistros[fechaFormateada] += calorias;
+    } else {
+      setRegistros[fechaFormateada] = calorias;
+    }
+    console.log(setRegistros)
+    console.log(registros)
   }
 
   return (
@@ -100,7 +120,7 @@ export const UserPage = () => {
                   </div>
                 }
                 <h5 className="card-title">Detalle de Usuario</h5>
-                <p className="card-text"><b>Calorias consumidas hoy:</b>  1.200</p>
+                <p className="card-text"><b>Calorias consumidas hoy:</b>  1.200 </p>
                 <p className="card-text"><b>Calorias quemadas hoy:</b>  456</p>
                 <p className="card-text"><b>Peso registrado:</b>  25</p>
                  
@@ -147,7 +167,8 @@ export const UserPage = () => {
                       <tr key={index}>
                         <td>{item.idReceta.descripcion}</td>
                         <td>{item.idReceta.caloria}</td>
-                        <td>{item.fecha}</td>
+                        <td>{formatearFecha(item.fecha)}</td>
+                        {sumarCalorias(item.fecha, item.idReceta.caloria)}
                         {/* <td><button className="btn btn-success" onClick={() => editarUsuario(item.receta)}>Editar</button></td> */}
                         <td><button className="btn btn-danger" onClick={() => eliminarDetalle(item._id)}><FontAwesomeIcon icon={faTrashAlt} /></button></td>
                       </tr>
